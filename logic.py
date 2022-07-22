@@ -63,7 +63,7 @@ try:
     shot_instance()
     print_it()
     time.sleep(split())
-    while i <= 100:  # Where number is the amount of rounds
+    while i <= 1000:  # Where number is the amount of rounds
         print("Shot Number: ")
         print(i + 1)
         choice(Shotlist)()
