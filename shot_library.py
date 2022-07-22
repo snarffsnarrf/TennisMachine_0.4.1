@@ -1,3 +1,5 @@
+# Define pinouts
+
 Hfreq = 200
 azm_freq = 50
 alt_freq = 50
@@ -19,6 +21,7 @@ alt_center = 7.5
 alt_up = 2.5
 alt_down = 11
 
+# Classes for shot instances
 
 class Shot:
 

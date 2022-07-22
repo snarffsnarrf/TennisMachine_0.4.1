@@ -4,22 +4,22 @@ import random
 import RPi.GPIO as GPIO
 from random import choice
 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BOARD)  # Sets board numbering system
 GPIO.setup(11, GPIO.OUT)  # Enable pin Top
 GPIO.setup(13, GPIO.OUT)  # Enable pin Bottom
 GPIO.setup(16, GPIO.OUT)  # Enable direction control top 1
 GPIO.setup(18, GPIO.OUT)  # Enable direction control top 2
 GPIO.setup(29, GPIO.OUT)  # Enable direction control bottom 1
 GPIO.setup(31, GPIO.OUT)  # Enable direction control bottom 2
-GPIO.setup(32, GPIO.OUT)  # Enable azm control
-GPIO.setup(33, GPIO.OUT)  # Enable alt control
+GPIO.setup(32, GPIO.OUT)  # Enable control azm
+GPIO.setup(33, GPIO.OUT)  # Enable control alt
 
 top = GPIO.PWM(11, Shot.tfreq)  # GPIO.PWM instance start top
 bot = GPIO.PWM(13, Shot.bfreq)  # GPIO.PWM instance start bottom
-azm = GPIO.PWM(32, Shot.azmfreq)
-alt = GPIO.PWM(33, Shot.altfreq)
-GPIO.output(16, True)
-GPIO.output(29, True)
+azm = GPIO.PWM(32, Shot.azmfreq)  # GPIO.PWM Instance start azm
+alt = GPIO.PWM(33, Shot.altfreq)  # GPIO.PWM Instance start alt
+GPIO.output(16, True)  # Dont remember what this does
+GPIO.output(29, True)  # Dont remember what this does
 
 
 def split():
@@ -53,10 +53,10 @@ Shotlist = [Shot.t_c, Shot.t_l, Shot.t_r, Shot.b_c, Shot.b_l, Shot.b_r,
 
 
 try:
-    top.start(0)  # Begin PWM
-    bot.start(0)  # Begin PWM
-    azm.start(0)
-    alt.start(0)
+    top.start(0)  # Begin PWM top
+    bot.start(0)  # Begin PWM bot
+    azm.start(0)  # Begin PWM azm
+    alt.start(0)  # Begin PWM alt
     i = 0  # Instance for timing
     ShotNumber = i + 1
     Shot.startup()
