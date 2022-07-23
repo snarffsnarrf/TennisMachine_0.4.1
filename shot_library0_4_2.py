@@ -1,6 +1,6 @@
-Hfreq = 200
-azm_freq = 50
-alt_freq = 50
+Hfreq = 400
+azm_freq = 100
+alt_freq = 100
 top_pin = 11
 bot_pin = 13
 azm_pin = 32
