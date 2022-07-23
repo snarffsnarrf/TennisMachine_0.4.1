@@ -18,12 +18,12 @@ top = GPIO.PWM(11, Shot.tfreq)  # GPIO.PWM instance start top
 bot = GPIO.PWM(13, Shot.bfreq)  # GPIO.PWM instance start bottom
 azm = GPIO.PWM(32, Shot.azmfreq)  # GPIO.PWM Instance start azm
 alt = GPIO.PWM(33, Shot.altfreq)  # GPIO.PWM Instance start alt
-GPIO.output(16, True)  # Dont remember what this does
-GPIO.output(29, True)  # Dont remember what this does
+GPIO.output(16, True)  # Don't remember what this does
+GPIO.output(29, True)  # Don't remember what this does
 
 
 def split():
-    return random.randint(3, 5)  # Random time Between shots
+    return random.randint(5, 6)  # Random time Between shots
 
 
 def print_it():
@@ -58,7 +58,7 @@ try:
     azm.start(0)  # Begin PWM azm
     alt.start(0)  # Begin PWM alt
     i = 0  # Instance for timing
-    ShotNumber = i + 1
+    ShotNumber = i + 1  # Counter
     Shot.startup()
     shot_instance()
     print_it()
@@ -74,7 +74,8 @@ try:
     print("-----")
     time.sleep(1)
     print("GO")
-    while i <= 100:  # Where number is the amount of rounds
+    time.sleep(1)
+    while i <= 1000:  # Where number is the amount of rounds
         print("Shot Number: ")
         print(i + 1)
         choice(Shotlist)()
@@ -85,5 +86,3 @@ try:
         i = i + 1
 finally:
     GPIO.cleanup()
-
-# Shot = Shot(1, 1, 0, 0, 0, 0)
