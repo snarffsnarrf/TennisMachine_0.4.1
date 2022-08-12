@@ -269,4 +269,5 @@ class Shot:
     #     self.bduty = hhspd
     #     self.name = "Wide Open"
 
-Shot = Shot(100, 100, 50, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0)  #Initial shot paramaters
+
+Shot = Shot(100, 100, 50, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0)  # Initial shot paramaters
